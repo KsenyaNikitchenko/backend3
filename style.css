@@ -4,7 +4,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Fasthand', cursive;
+    font-family: 'Fasthand';
 }
 .form{
     background-color: rgb(160, 231, 231);
