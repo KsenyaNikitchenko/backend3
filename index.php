@@ -35,7 +35,7 @@ if (empty($_POST['superpowers'])){
     $errors = true;
 }
 else {
-    $super = serialize($_POST['super']);
+    $super = serialize($_POST['superpowers']);
 }
 if (empty($_POST['biography'])){
     print ('Расскажите о себе<br>');
