@@ -28,9 +28,6 @@ h1,h2 {
     text-align: center;
     margin: 5px;
 }
-.error{
-background-color: red;
-}
 .submit{
     background-color: darkcyan;
     padding: 10px 30px;
@@ -39,4 +36,4 @@ background-color: red;
     border-radius: 10px;
     text-decoration: none;
     color: white;
-} 
+}

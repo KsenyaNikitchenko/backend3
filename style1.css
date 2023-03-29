@@ -1,0 +1,37 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+}
+div {
+    background-color: rgb(160, 231, 181);
+    font-family: "Times New Roman", monotype;
+    font-weight: 200;
+    font-style: normal;
+    text-align: left;
+    padding: 0% 5%;
+}
+header {
+    background-color: rgb(114, 184, 133);
+}
+h2,h3 {
+    font-style: oblique;
+    text-align: center;
+}
+p {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border: 3px;
+    tab-size: inherit;
+}
+img{
+    width: 60%;
+    height: 50%;
+}
+footer {
+    background-color: rgb(114, 184, 133);
+    text-align: left;
+    font-style: oblique;
+    width: 100%;
+    height: 30px;
+}
