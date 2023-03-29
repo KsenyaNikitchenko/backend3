@@ -51,7 +51,7 @@ if ($errors) {// При наличии ошибок завершаем рабо�
 // Сохранение в базу данных.
 $user = 'u52984';
 $pass = '8295850';
-$db = new PDO('mysql:host=localhost;dbname=u47567', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+$db = new PDO('mysql:host=localhost;dbname=u52984', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 // Подготовленный запрос. Не именованные метки.
 try {
     $stmt = $db->prepare("INSERT INTO person SET name = ?, email = ?, year = ?, gender = ?, limbs = ?, biography = ?");
