@@ -14,7 +14,7 @@
         </div>
     </header>
     <div class="form">
-        <form action="/" method="POST">
+        <form action="index.php" method="POST">
             <label>
                 Введите имя:<br>
                 <input name="name" placeholder="Введите имя" /><br>
