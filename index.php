@@ -66,7 +66,7 @@ try {
     $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
         $stmt -> execute(array(
         $_POST['name'], 
-        $_POST['super'] = serialize($_POST['superpowers']),
+        $_POST['superpower'] = serialize($_POST['superpowers']),
     ));
 }
 catch(PDOException $e){
