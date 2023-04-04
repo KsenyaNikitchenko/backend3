@@ -55,7 +55,7 @@ $db = new PDO('mysql:host=localhost;dbname=u52984', $user, $pass, array(PDO::ATT
 // Подготовленный запрос. Не именованные метки.
 try {
     $stmt = $db->prepare("INSERT INTO person SET name = ?, email = ?, year = ?, gender = ?, limbs = ?, biography = ?");
-        $stmt -> execute(array(
+    $stmt -> execute(array(
         $_POST['name'],
         $_POST['email'],
         $_POST['year'],
@@ -63,11 +63,18 @@ try {
         $_POST['limbs'],
         $_POST['biography'],
     ));
-    $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
+    //$arr = array(1, 2, 3, 4);
+    foreach ($_POST['superpowers'] as $value) {
+    //$value = $value * 2;
+        $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
         $stmt -> execute(array(
-        $_POST['name'], 
-        $_POST['superpower'] = implode(', ',$_POST['superpowers']),
-    ));
+            $_POST['name'], 
+            $_POST['superpower'] = implode($value),
+        ));
+    }
+// массив $arr сейчас таков: array(2, 4, 6, 8)
+    unset($value);
+    
 }
 catch(PDOException $e){
 print('Error: ' . $e->getMessage());
