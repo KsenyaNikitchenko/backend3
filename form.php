@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Человеческие сверхспособности</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_form.css">
 </head>
 
 <body>
