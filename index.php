@@ -69,7 +69,7 @@ try {
         $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
         $stmt -> execute(array(
             $_POST['name'], 
-            $_POST['superpower'] = implode($value),
+            implode($value),
         ));
     }
 // массив $arr сейчас таков: array(2, 4, 6, 8)
