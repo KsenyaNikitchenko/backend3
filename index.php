@@ -64,6 +64,9 @@ try {
         $_POST['biography'],
     ));
     //$arr = array(1, 2, 3, 4);
+    echo '<pre>';
+    print_r($_POST['superpowers']);
+    echo '<pre>';
     foreach ($_POST['superpowers'] as $value) {
     //$value = $value * 2;
         $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
