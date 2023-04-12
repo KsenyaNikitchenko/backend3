@@ -65,8 +65,8 @@ try {
     ));
     $last_index=$db->lastInsertId();
     foreach ($_POST['superpowers'] as $value) {
-        $stmt = $db->prepare("INSERT INTO ability SELECT $last_index,
-        id_power FROM superpower WHERE superpower.superpower=$value");
+        $id_power = $db->prepare("SELECT id_power FROM superpower WHERE superpower=$value");
+        $stmt = $db->prepare("INSERT INTO ability VALUES ($last_index,$id_power)");
     }
     unset($value);
 }
