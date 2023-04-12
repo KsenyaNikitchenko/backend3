@@ -63,12 +63,10 @@ try {
         $_POST['limbs'],
         $_POST['biography'],
     ));
+    $last_index=$db->lastInsertId();
     foreach ($_POST['superpowers'] as $value) {
-        $stmt = $db->prepare("INSERT INTO superpower SET name = ?, superpower = ?");
-        $stmt -> execute(array(
-            $_POST['name'], 
-            $value,
-        ));
+        $stmt = $db->prepare("INSERT INTO ability SELECT $last_index,
+        id_power FROM superpower WHERE superpower.superpower=$value");
     }
     unset($value);
 }
