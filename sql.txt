@@ -8,12 +8,18 @@ limbs INT(5),
 biography TEXT,
 PRIMARY KEY(id_person)
 );
+
 CREATE TABLE superpower(
 id_power INT(10) unsigned NOT NULL AUTO_INCREMENT,
 superpower VARCHAR(200),
 PRIMARY KEY(id_power)
 );
+
 CREATE TABLE ability(
 id_person INT(10) NOT NULL,
-id_superpower INT(10) NOT NULL
+id_superpower INT(10) NOT NULL,
 PRIMARY KEY(id_person,id_superpower));
+
+INSERT INTO superpower (superpower) VALUES
+    ('deathless'),('walls'),('levitation'),
+    ('elements'),('time travel');
