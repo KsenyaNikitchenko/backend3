@@ -64,6 +64,7 @@ try {
         $_POST['biography']
     ));
     $last_index=$db->lastInsertId();
+    print $db->lastInsertId();
     $stmt = $db->prepare("SELECT id_power FROM superpower WHERE superpower=?");
     foreach ($_POST['superpowers'] as $value) {
         $stmt->execute([$value]);
