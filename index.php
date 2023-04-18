@@ -64,9 +64,10 @@ try {
         $_POST['biography']
     ));
     $last_index=$db->lastInsertId();
+    $stmt = $db->prepare("SELECT id_power FROM superpower WHERE superpower=?");
     foreach ($_POST['superpowers'] as $value) {
-        $id_power = $db->prepare("SELECT id_power FROM superpower WHERE superpower=?");
-        $id_power->execute([$value]);
+        $stmt->execute([$value]);
+        $id_power=$stmt->fetchColumn();
         $stmt = $db->prepare("INSERT INTO ability SET id_person = ?, id_power = ?");
         $stmt -> execute(array(
             $last_index,
