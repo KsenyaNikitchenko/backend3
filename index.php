@@ -57,12 +57,12 @@ try {
     $stmt = $db->prepare("INSERT INTO person (name, email, year, gender, limbs, biography) VALUES (?, ?, ?, ?, ?, ?)");
     $stmt -> execute([$_POST['name'], $_POST['email'], $_POST['year'], $_POST['gender'], $_POST['limbs'], $_POST['biography']]);
     $last_index=$db->lastInsertId();
-    $stmt = $db->prepare("SELECT id_power FROM superpower WHERE superpower = ?");
+    //$stmt = $db->prepare("SELECT id_power FROM superpower WHERE superpower = ?");
     foreach ($_POST['superpowers'] as $value) {
-        $stmt->execute([$value]);
-        $id_power=$stmt->fetchColumn();
+        //$stmt->execute([$value]);
+        //$id_power=$stmt->fetchColumn();
         $stmt1 = $db->prepare("INSERT INTO ability (id_person, id_power) VALUES (?, ?)");
-        $stmt1 -> execute([$last_index, $id_power]);
+        $stmt1 -> execute([$last_index, $value]);
     }
     unset($value);
 }
