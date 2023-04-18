@@ -16,9 +16,10 @@ PRIMARY KEY(id_power)
 );
 
 CREATE TABLE ability(
-id_person INT(10) NOT NULL,
-id_superpower INT(10) NOT NULL,
-PRIMARY KEY(id_person,id_superpower));
+    id_user INT(10) NOT NULL,
+    id_superpower INT(10) NOT NULL,
+    PRIMARY KEY(id_user,id_superpower)
+);
 
 INSERT INTO superpower (superpower) VALUES
     ('deathless'),('walls'),('levitation'),
