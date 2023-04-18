@@ -69,11 +69,8 @@ try {
     foreach ($_POST['superpowers'] as $value) {
         $stmt->execute([$value]);
         $id_power=$stmt->fetchColumn();
-        $stmt1 = $db->prepare("INSERT INTO ability SET id_person = ?, id_power = ?");
-        $stmt1 -> execute(array(
-            $last_index,
-            $id_power
-        ));
+        $stmt1 = $db->prepare("INSERT INTO ability (id_person, id_power) VALUES (?, ?)");
+        $stmt1 -> execute([$last_index, $id_power]);
     }
     unset($value);
 }
