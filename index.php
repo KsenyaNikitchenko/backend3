@@ -70,7 +70,7 @@ try {
         $stmt = $db->prepare("INSERT INTO ability SET id_person = ?, id_power = ?");
         $stmt -> execute(array(
             $last_index,
-            $id_power
+            $id_power,
         ));
     }
     unset($value);
