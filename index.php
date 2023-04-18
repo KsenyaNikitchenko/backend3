@@ -54,18 +54,10 @@ $pass = '8295850';
 $db = new PDO('mysql:host=localhost;dbname=u52984', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
 // Подготовленный запрос. Не именованные метки.
 try {
-    $stmt = $db->prepare("INSERT INTO person SET name = ?, email = ?, year = ?, gender = ?, limbs = ?, biography = ?");
-    $stmt -> execute(array(
-        $_POST['name'],
-        $_POST['email'],
-        $_POST['year'],
-        $_POST['gender'],
-        $_POST['limbs'],
-        $_POST['biography']
-    ));
+    $stmt = $db->prepare("INSERT INTO person (name, email, year, gender, limbs, biography) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt -> execute([$_POST['name'], $_POST['email'], $_POST['year'], $_POST['gender'], $_POST['limbs'], $_POST['biography']]);
     $last_index=$db->lastInsertId();
-    print $db->lastInsertId();
-    $stmt = $db->prepare("SELECT id_power FROM superpower WHERE superpower=?");
+    $stmt = $db->prepare("SELECT id_power FROM superpower WHERE superpower = ?");
     foreach ($_POST['superpowers'] as $value) {
         $stmt->execute([$value]);
         $id_power=$stmt->fetchColumn();
